@@ -19,8 +19,6 @@
             <String label="MemberId" v-model="value.memberId" :editMode="editMode" :inputUI="''"/>
             <String label="Status" v-model="value.status" :editMode="editMode" :inputUI="''"/>
             <Number label="Cost" v-model="value.cost" :editMode="editMode" :inputUI="''"/>
-            <Date label="RentalDate" v-model="value.rentalDate" :editMode="editMode" :inputUI="''"/>
-            <Date label="RequiredReturnDate" v-model="value.requiredReturnDate" :editMode="editMode" :inputUI="''"/>
         </v-card-text>
 
         <v-card-actions style="background-color: white;">

@@ -23,12 +23,6 @@
                             <v-list-item-subtitle>
                                 Cost :  {{item.cost }}
                             </v-list-item-subtitle>
-                            <v-list-item-subtitle>
-                                RentalDate :  {{item.rentalDate }}
-                            </v-list-item-subtitle>
-                            <v-list-item-subtitle>
-                                RequiredReturnDate :  {{item.requiredReturnDate }}
-                            </v-list-item-subtitle>
                         </v-list-item-content>
 
                         <v-list-item-action>
@@ -80,10 +74,6 @@
                 if(val != undefined) {
                     var arr = this.list[val]._links.self.href.split('/');
                     obj['id'] = arr[4]; 
-                    
-                    
-                    
-                    
                     
                     
                     

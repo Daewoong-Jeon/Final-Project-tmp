@@ -25,10 +25,6 @@ public class Book {
 
     private Integer cost;
 
-    private Date rentalDate;
-
-    private Date requiredReturnDate;
-
     @PostPersist
     public void onPostPersist() {
         RentalStatusUpdated rentalStatusUpdated = new RentalStatusUpdated(this);

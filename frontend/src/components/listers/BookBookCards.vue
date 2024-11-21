@@ -107,8 +107,6 @@
                 'memberId': '',
                 'status': '',
                 'cost': 0,
-                'rentalDate': '2024-11-21',
-                'requiredReturnDate': '2024-11-21',
             }
         },
         methods:{

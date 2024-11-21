@@ -44,8 +44,6 @@
                             
                             
                             
-                            
-                            
                         </v-list-item-title>
 
                         <v-list-item-subtitle style="font-size:25px; font-weight:700;">
@@ -53,8 +51,6 @@
                             [ MemberId :  {{data.memberId }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             [ Status :  {{data.status }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             [ Cost :  {{data.cost }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            [ RentalDate :  {{data.rentalDate }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            [ RequiredReturnDate :  {{data.requiredReturnDate }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         </v-list-item-subtitle>
 
                     </v-list-item-content>
@@ -125,8 +121,6 @@
                 'memberId': '',
                 'status': '',
                 'cost': 0,
-                'rentalDate': '2024-11-21',
-                'requiredReturnDate': '2024-11-21',
             }
         },
         methods: {
