@@ -107,7 +107,6 @@
                 'memberId': '',
                 'status': '',
                 'cost': 0,
-                'rentalId': 0,
             }
         },
         methods:{

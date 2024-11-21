@@ -13,6 +13,7 @@ public class LackOfPoints extends AbstractEvent {
 
     private String id;
     private Integer rentalPoint;
+    private String bookId;
 
     public LackOfPoints(Member aggregate) {
         super(aggregate);

@@ -27,8 +27,6 @@ public class Book {
 
     private Integer cost;
 
-    private Integer rentalId;
-
     @PostPersist
     public void onPostPersist() {
         RentalStatusUpdated rentalStatusUpdated = new RentalStatusUpdated(this);
