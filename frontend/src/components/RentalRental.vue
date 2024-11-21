@@ -22,6 +22,7 @@
             <Date label="RequiredReturnDate" v-model="value.requiredReturnDate" :editMode="editMode" :inputUI="''"/>
             <Date label="ReturnDate" v-model="value.returnDate" :editMode="editMode" :inputUI="''"/>
             <String label="OverdueYn" v-model="value.overdueYn" :editMode="editMode" :inputUI="''"/>
+            <String label="Result" v-model="value.result" :editMode="editMode" :inputUI="''"/>
         </v-card-text>
 
         <v-card-actions style="background-color: white;">

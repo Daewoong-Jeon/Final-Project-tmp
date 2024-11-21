@@ -131,5 +131,31 @@ public class BookListViewHandler {
             e.printStackTrace();
         }
     }
+
+    @StreamListener(KafkaProcessor.INPUT)
+    public void whenBookRollbacked_then_UPDATE_5(
+        @Payload BookRollbacked bookRollbacked
+    ) {
+        try {
+            if (!bookRollbacked.validate()) return;
+            // view 객체 조회
+            Optional<BookList> bookListOptional = bookListRepository.findByBookId(
+                bookRollbacked.getId()
+            );
+
+            if (bookListOptional.isPresent()) {
+                BookList bookList = bookListOptional.get();
+                // view 객체에 이벤트의 eventDirectValue 를 set 함
+                bookList.setRentalStatus(bookRollbacked.getStatus());
+                bookList.setRecentRentalMemberId(null);
+                bookList.setRecentRentalDate(null);
+                bookList.setRequiredReturnDate(null);
+                // view 레파지 토리에 save
+                bookListRepository.save(bookList);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
     //>>> DDD / CQRS
 }

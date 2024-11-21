@@ -3,6 +3,8 @@ package finalproject.domain;
 import finalproject.BookApplication;
 import finalproject.domain.AvailableStatusUpdated;
 import finalproject.domain.BookAdded;
+import finalproject.domain.BookRollbacked;
+import finalproject.domain.NotAvailableBook;
 import finalproject.domain.RentalStatusUpdated;
 import java.time.LocalDate;
 import java.util.Date;
@@ -25,6 +27,8 @@ public class Book {
 
     private Integer cost;
 
+    private Integer rentalId;
+
     @PostPersist
     public void onPostPersist() {
         RentalStatusUpdated rentalStatusUpdated = new RentalStatusUpdated(this);
@@ -37,6 +41,12 @@ public class Book {
 
         BookAdded bookAdded = new BookAdded(this);
         bookAdded.publishAfterCommit();
+
+        NotAvailableBook notAvailableBook = new NotAvailableBook(this);
+        notAvailableBook.publishAfterCommit();
+
+        BookRollbacked bookRollbacked = new BookRollbacked(this);
+        bookRollbacked.publishAfterCommit();
     }
 
     public static BookRepository repository() {
@@ -56,6 +66,8 @@ public class Book {
 
         RentalStatusUpdated rentalStatusUpdated = new RentalStatusUpdated(book);
         rentalStatusUpdated.publishAfterCommit();
+        NotAvailableBook notAvailableBook = new NotAvailableBook(book);
+        notAvailableBook.publishAfterCommit();
         */
 
         /** Example 2:  finding and process
@@ -67,6 +79,8 @@ public class Book {
 
             RentalStatusUpdated rentalStatusUpdated = new RentalStatusUpdated(book);
             rentalStatusUpdated.publishAfterCommit();
+            NotAvailableBook notAvailableBook = new NotAvailableBook(book);
+            notAvailableBook.publishAfterCommit();
 
          });
         */
@@ -95,6 +109,34 @@ public class Book {
 
             AvailableStatusUpdated availableStatusUpdated = new AvailableStatusUpdated(book);
             availableStatusUpdated.publishAfterCommit();
+
+         });
+        */
+
+    }
+
+    //>>> Clean Arch / Port Method
+    //<<< Clean Arch / Port Method
+    public static void rollbackBook(LackOfPoints lackOfPoints) {
+        //implement business logic here:
+
+        /** Example 1:  new item 
+        Book book = new Book();
+        repository().save(book);
+
+        BookRollbacked bookRollbacked = new BookRollbacked(book);
+        bookRollbacked.publishAfterCommit();
+        */
+
+        /** Example 2:  finding and process
+        
+        repository().findById(lackOfPoints.get???()).ifPresent(book->{
+            
+            book // do something
+            repository().save(book);
+
+            BookRollbacked bookRollbacked = new BookRollbacked(book);
+            bookRollbacked.publishAfterCommit();
 
          });
         */

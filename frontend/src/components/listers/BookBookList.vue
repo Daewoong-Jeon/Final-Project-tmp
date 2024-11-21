@@ -44,6 +44,7 @@
                             
                             
                             
+                            
                         </v-list-item-title>
 
                         <v-list-item-subtitle style="font-size:25px; font-weight:700;">
@@ -51,6 +52,7 @@
                             [ MemberId :  {{data.memberId }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             [ Status :  {{data.status }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             [ Cost :  {{data.cost }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            [ RentalId :  {{data.rentalId }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         </v-list-item-subtitle>
 
                     </v-list-item-content>
@@ -121,6 +123,7 @@
                 'memberId': '',
                 'status': '',
                 'cost': 0,
+                'rentalId': 0,
             }
         },
         methods: {

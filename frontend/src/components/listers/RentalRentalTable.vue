@@ -73,6 +73,7 @@
                     { text: "requiredReturnDate", value: "requiredReturnDate" },
                     { text: "returnDate", value: "returnDate" },
                     { text: "overdueYn", value: "overdueYn" },
+                    { text: "result", value: "result" },
                 ],
             rental : [],
             newValue: {},
@@ -96,6 +97,7 @@
                 'requiredReturnDate': '2024-11-21',
                 'returnDate': '2024-11-21',
                 'overdueYn': '',
+                'result': '',
             }
         },
         methods: {

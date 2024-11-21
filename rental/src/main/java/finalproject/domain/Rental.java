@@ -29,6 +29,8 @@ public class Rental {
 
     private String overdueYn;
 
+    private String result;
+
     @PostPersist
     public void onPostPersist() {}
 
@@ -54,6 +56,55 @@ public class Rental {
 
         BookReturned bookReturned = new BookReturned(this);
         bookReturned.publishAfterCommit();
+    }
+
+    //>>> Clean Arch / Port Method
+
+    //<<< Clean Arch / Port Method
+    public static void updateNotAvailable(NotAvailableBook notAvailableBook) {
+        //implement business logic here:
+
+        /** Example 1:  new item 
+        Rental rental = new Rental();
+        repository().save(rental);
+
+        */
+
+        /** Example 2:  finding and process
+        
+        repository().findById(notAvailableBook.get???()).ifPresent(rental->{
+            
+            rental // do something
+            repository().save(rental);
+
+
+         });
+        */
+
+    }
+
+    //>>> Clean Arch / Port Method
+    //<<< Clean Arch / Port Method
+    public static void updateLackOfPoints(BookRollbacked bookRollbacked) {
+        //implement business logic here:
+
+        /** Example 1:  new item 
+        Rental rental = new Rental();
+        repository().save(rental);
+
+        */
+
+        /** Example 2:  finding and process
+        
+        repository().findById(bookRollbacked.get???()).ifPresent(rental->{
+            
+            rental // do something
+            repository().save(rental);
+
+
+         });
+        */
+
     }
     //>>> Clean Arch / Port Method
 
