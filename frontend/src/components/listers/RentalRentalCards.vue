@@ -110,6 +110,7 @@
                 'requiredReturnDate': '2024-11-21',
                 'returnDate': '2024-11-21',
                 'overdueYn': '',
+                'result': '',
             }
         },
         methods:{

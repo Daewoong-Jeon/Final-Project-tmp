@@ -19,6 +19,7 @@
             <String label="MemberId" v-model="value.memberId" :editMode="editMode" :inputUI="''"/>
             <String label="Status" v-model="value.status" :editMode="editMode" :inputUI="''"/>
             <Number label="Cost" v-model="value.cost" :editMode="editMode" :inputUI="''"/>
+            <Number label="RentalId" v-model="value.rentalId" :editMode="editMode" :inputUI="''"/>
         </v-card-text>
 
         <v-card-actions style="background-color: white;">

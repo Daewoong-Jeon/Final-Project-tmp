@@ -36,11 +36,11 @@ mvn spring-boot:run
 ## Test by API
 - rental
 ```
- http :8088/rentals id="id" bookId="bookId" memberId="memberId" rentalDate="rentalDate" requiredReturnDate="requiredReturnDate" returnDate="returnDate" overdueYn="overdueYn" 
+ http :8088/rentals id="id" bookId="bookId" memberId="memberId" rentalDate="rentalDate" requiredReturnDate="requiredReturnDate" returnDate="returnDate" overdueYn="overdueYn" result="result" 
 ```
 - book
 ```
- http :8088/books id="id" memberId="memberId" status="status" cost="cost" 
+ http :8088/books id="id" memberId="memberId" status="status" cost="cost" rentalId="rentalId" 
 ```
 - member
 ```

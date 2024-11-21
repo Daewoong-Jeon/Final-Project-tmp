@@ -70,6 +70,7 @@
                     { text: "memberId", value: "memberId" },
                     { text: "status", value: "status" },
                     { text: "cost", value: "cost" },
+                    { text: "rentalId", value: "rentalId" },
                 ],
             book : [],
             newValue: {},
@@ -90,6 +91,7 @@
                 'memberId': '',
                 'status': '',
                 'cost': 0,
+                'rentalId': 0,
             }
         },
         methods: {

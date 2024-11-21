@@ -47,6 +47,7 @@
                             
                             
                             
+                            
                         </v-list-item-title>
 
                         <v-list-item-subtitle style="font-size:25px; font-weight:700;">
@@ -57,6 +58,7 @@
                             [ RequiredReturnDate :  {{data.requiredReturnDate }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             [ ReturnDate :  {{data.returnDate }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             [ OverdueYn :  {{data.overdueYn }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            [ Result :  {{data.result }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         </v-list-item-subtitle>
 
                     </v-list-item-content>
@@ -130,6 +132,7 @@
                 'requiredReturnDate': '2024-11-21',
                 'returnDate': '2024-11-21',
                 'overdueYn': '',
+                'result': '',
             }
         },
         methods: {
