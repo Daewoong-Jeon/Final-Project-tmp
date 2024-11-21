@@ -14,6 +14,7 @@ public class NotAvailableBook extends AbstractEvent {
     private String id;
     private String memberId;
     private String status;
+    private String rentalId;
 
     public NotAvailableBook(Book aggregate) {
         super(aggregate);
