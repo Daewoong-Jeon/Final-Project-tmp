@@ -9,18 +9,17 @@ import lombok.*;
 //<<< DDD / Domain Event
 @Data
 @ToString
-public class BookRent extends AbstractEvent {
+public class LackOfPointsReturned extends AbstractEvent {
 
-    private String memberId;
+    private String id;
+    private Integer rentalPoint;
     private String bookId;
-    private Date rentalDate;
-    private Date requiredReturnDate;
 
-    public BookRent(Rental aggregate) {
+    public LackOfPointsReturned(Member aggregate) {
         super(aggregate);
     }
 
-    public BookRent() {
+    public LackOfPointsReturned() {
         super();
     }
 }
