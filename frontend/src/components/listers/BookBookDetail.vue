@@ -14,9 +14,6 @@
             <div>
                 <Number label="Cost" v-model="item.cost" :editMode="editMode" @change="change" />
             </div>
-            <div>
-                <Number label="RentalId" v-model="item.rentalId" :editMode="editMode" @change="change" />
-            </div>
         </v-card-text>
 
         <v-card-actions>

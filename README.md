@@ -40,7 +40,7 @@ mvn spring-boot:run
 ```
 - book
 ```
- http :8088/books id="id" memberId="memberId" status="status" cost="cost" rentalId="rentalId" 
+ http :8088/books id="id" memberId="memberId" status="status" cost="cost" 
 ```
 - member
 ```
