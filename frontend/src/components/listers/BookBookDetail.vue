@@ -14,12 +14,6 @@
             <div>
                 <Number label="Cost" v-model="item.cost" :editMode="editMode" @change="change" />
             </div>
-            <div>
-                <Date label="RentalDate" v-model="item.rentalDate" :editMode="editMode" @change="change" />
-            </div>
-            <div>
-                <Date label="RequiredReturnDate" v-model="item.requiredReturnDate" :editMode="editMode" @change="change" />
-            </div>
         </v-card-text>
 
         <v-card-actions>

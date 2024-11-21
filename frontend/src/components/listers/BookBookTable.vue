@@ -70,8 +70,6 @@
                     { text: "memberId", value: "memberId" },
                     { text: "status", value: "status" },
                     { text: "cost", value: "cost" },
-                    { text: "rentalDate", value: "rentalDate" },
-                    { text: "requiredReturnDate", value: "requiredReturnDate" },
                 ],
             book : [],
             newValue: {},
@@ -92,8 +90,6 @@
                 'memberId': '',
                 'status': '',
                 'cost': 0,
-                'rentalDate': '2024-11-21',
-                'requiredReturnDate': '2024-11-21',
             }
         },
         methods: {

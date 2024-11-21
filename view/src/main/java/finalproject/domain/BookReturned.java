@@ -6,10 +6,10 @@ import java.util.*;
 import lombok.Data;
 
 @Data
-public class AvailableStatusUpdated extends AbstractEvent {
+public class BookReturned extends AbstractEvent {
 
+    private String bookId;
     private String memberId;
-    private Integer cost;
-    private String id;
-    private String status;
+    private String overdueYn;
+    private Date returnDate;
 }

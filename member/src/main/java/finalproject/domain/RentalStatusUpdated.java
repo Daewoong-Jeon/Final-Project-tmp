@@ -13,6 +13,4 @@ public class RentalStatusUpdated extends AbstractEvent {
     private Integer cost;
     private String id;
     private String status;
-    private Date rentalDate;
-    private Date requiredReturnDate;
 }

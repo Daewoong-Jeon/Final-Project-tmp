@@ -50,14 +50,8 @@ public class BookListViewHandler {
                 BookList bookList = bookListOptional.get();
                 // view 객체에 이벤트의 eventDirectValue 를 set 함
                 bookList.setRentalStatus(rentalStatusUpdated.getStatus());
-                bookList.setRequiredReturnDate(
-                    rentalStatusUpdated.getRequiredReturnDate()
-                );
                 bookList.setRecentRentalMemberId(
                     rentalStatusUpdated.getMemberId()
-                );
-                bookList.setRecentRentalDate(
-                    rentalStatusUpdated.getRentalDate()
                 );
                 // view 레파지 토리에 save
                 bookListRepository.save(bookList);
@@ -82,6 +76,53 @@ public class BookListViewHandler {
                 BookList bookList = bookListOptional.get();
                 // view 객체에 이벤트의 eventDirectValue 를 set 함
                 bookList.setRentalStatus(availableStatusUpdated.getStatus());
+                bookList.setRequiredReturnDate(null);
+                // view 레파지 토리에 save
+                bookListRepository.save(bookList);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @StreamListener(KafkaProcessor.INPUT)
+    public void whenBookRent_then_UPDATE_3(@Payload BookRent bookRent) {
+        try {
+            if (!bookRent.validate()) return;
+            // view 객체 조회
+            Optional<BookList> bookListOptional = bookListRepository.findByBookId(
+                bookRent.getBookId()
+            );
+
+            if (bookListOptional.isPresent()) {
+                BookList bookList = bookListOptional.get();
+                // view 객체에 이벤트의 eventDirectValue 를 set 함
+                bookList.setRecentRentalDate(bookRent.getRentalDate());
+                bookList.setRequiredReturnDate(
+                    bookRent.getRequiredReturnDate()
+                );
+                // view 레파지 토리에 save
+                bookListRepository.save(bookList);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @StreamListener(KafkaProcessor.INPUT)
+    public void whenBookReturned_then_UPDATE_4(
+        @Payload BookReturned bookReturned
+    ) {
+        try {
+            if (!bookReturned.validate()) return;
+            // view 객체 조회
+            Optional<BookList> bookListOptional = bookListRepository.findByBookId(
+                bookReturned.getBookId()
+            );
+
+            if (bookListOptional.isPresent()) {
+                BookList bookList = bookListOptional.get();
+                // view 객체에 이벤트의 eventDirectValue 를 set 함
                 bookList.setRequiredReturnDate(null);
                 // view 레파지 토리에 save
                 bookListRepository.save(bookList);
