@@ -1,7 +1,7 @@
 package finalproject.domain;
 
 import finalproject.MemberApplication;
-import finalproject.domain.LackOfPoints;
+import finalproject.domain.LackOfPointsReturned;
 import finalproject.domain.RentalPointDecreased;
 import finalproject.domain.RentalPointIncreased;
 import java.time.LocalDate;
@@ -35,8 +35,10 @@ public class Member {
         );
         rentalPointIncreased.publishAfterCommit();
 
-        LackOfPoints lackOfPoints = new LackOfPoints(this);
-        lackOfPoints.publishAfterCommit();
+        LackOfPointsReturned lackOfPointsReturned = new LackOfPointsReturned(
+            this
+        );
+        lackOfPointsReturned.publishAfterCommit();
     }
 
     public static MemberRepository repository() {
@@ -70,8 +72,8 @@ public class Member {
 
         RentalPointDecreased rentalPointDecreased = new RentalPointDecreased(member);
         rentalPointDecreased.publishAfterCommit();
-        LackOfPoints lackOfPoints = new LackOfPoints(member);
-        lackOfPoints.publishAfterCommit();
+        LackOfPointsReturned lackOfPointsReturned = new LackOfPointsReturned(member);
+        lackOfPointsReturned.publishAfterCommit();
         */
 
         /** Example 2:  finding and process
@@ -83,8 +85,8 @@ public class Member {
 
             RentalPointDecreased rentalPointDecreased = new RentalPointDecreased(member);
             rentalPointDecreased.publishAfterCommit();
-            LackOfPoints lackOfPoints = new LackOfPoints(member);
-            lackOfPoints.publishAfterCommit();
+            LackOfPointsReturned lackOfPointsReturned = new LackOfPointsReturned(member);
+            lackOfPointsReturned.publishAfterCommit();
 
          });
         */

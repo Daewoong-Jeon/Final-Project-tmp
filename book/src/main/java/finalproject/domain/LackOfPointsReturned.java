@@ -7,10 +7,9 @@ import lombok.*;
 
 @Data
 @ToString
-public class BookRent extends AbstractEvent {
+public class LackOfPointsReturned extends AbstractEvent {
 
-    private String memberId;
+    private String id;
+    private Integer rentalPoint;
     private String bookId;
-    private Date rentalDate;
-    private Date requiredReturnDate;
 }

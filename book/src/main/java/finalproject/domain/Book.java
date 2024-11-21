@@ -4,7 +4,7 @@ import finalproject.BookApplication;
 import finalproject.domain.AvailableStatusUpdated;
 import finalproject.domain.BookAdded;
 import finalproject.domain.BookRollbacked;
-import finalproject.domain.NotAvailableBook;
+import finalproject.domain.NotAvailableReturned;
 import finalproject.domain.RentalStatusUpdated;
 import java.time.LocalDate;
 import java.util.Date;
@@ -40,8 +40,10 @@ public class Book {
         BookAdded bookAdded = new BookAdded(this);
         bookAdded.publishAfterCommit();
 
-        NotAvailableBook notAvailableBook = new NotAvailableBook(this);
-        notAvailableBook.publishAfterCommit();
+        NotAvailableReturned notAvailableReturned = new NotAvailableReturned(
+            this
+        );
+        notAvailableReturned.publishAfterCommit();
 
         BookRollbacked bookRollbacked = new BookRollbacked(this);
         bookRollbacked.publishAfterCommit();
@@ -64,8 +66,8 @@ public class Book {
 
         RentalStatusUpdated rentalStatusUpdated = new RentalStatusUpdated(book);
         rentalStatusUpdated.publishAfterCommit();
-        NotAvailableBook notAvailableBook = new NotAvailableBook(book);
-        notAvailableBook.publishAfterCommit();
+        NotAvailableReturned notAvailableReturned = new NotAvailableReturned(book);
+        notAvailableReturned.publishAfterCommit();
         */
 
         /** Example 2:  finding and process
@@ -77,8 +79,8 @@ public class Book {
 
             RentalStatusUpdated rentalStatusUpdated = new RentalStatusUpdated(book);
             rentalStatusUpdated.publishAfterCommit();
-            NotAvailableBook notAvailableBook = new NotAvailableBook(book);
-            notAvailableBook.publishAfterCommit();
+            NotAvailableReturned notAvailableReturned = new NotAvailableReturned(book);
+            notAvailableReturned.publishAfterCommit();
 
          });
         */
@@ -115,7 +117,7 @@ public class Book {
 
     //>>> Clean Arch / Port Method
     //<<< Clean Arch / Port Method
-    public static void rollbackBook(LackOfPoints lackOfPoints) {
+    public static void rollbackBook(LackOfPointsReturned lackOfPointsReturned) {
         //implement business logic here:
 
         /** Example 1:  new item 
@@ -128,7 +130,7 @@ public class Book {
 
         /** Example 2:  finding and process
         
-        repository().findById(lackOfPoints.get???()).ifPresent(book->{
+        repository().findById(lackOfPointsReturned.get???()).ifPresent(book->{
             
             book // do something
             repository().save(book);

@@ -61,7 +61,9 @@ public class Rental {
     //>>> Clean Arch / Port Method
 
     //<<< Clean Arch / Port Method
-    public static void updateNotAvailable(NotAvailableBook notAvailableBook) {
+    public static void updateNotAvailable(
+        NotAvailableReturned notAvailableReturned
+    ) {
         //implement business logic here:
 
         /** Example 1:  new item 
@@ -72,7 +74,7 @@ public class Rental {
 
         /** Example 2:  finding and process
         
-        repository().findById(notAvailableBook.get???()).ifPresent(rental->{
+        repository().findById(notAvailableReturned.get???()).ifPresent(rental->{
             
             rental // do something
             repository().save(rental);
